@@ -12,7 +12,7 @@ const Alert = ({ open, message, onClose }: AlertProps) => {
   }
 
   return (
-    <div className="flex justify-between items-center mx-auto w-sm h-20 p-8 bg-white rounded-md border-2 shadow-[2px_2px_0px_0px_#000000] hover:shadow-[1px_1px_0px_0px_#000000] mb-4">
+    <div className="flex justify-between items-center mx-auto w-[90vw] sm:w-sm h-20 p-4 sm:p-8 bg-white rounded-md border-2 shadow-[2px_2px_0px_0px_#000000] hover:shadow-[1px_1px_0px_0px_#000000] mb-4">
       <h2 className="font-bold font-jetbrains text-clip">{message}</h2>
       <div className="flex">
         <Button onclick={() => onClose} text={"Close"} />

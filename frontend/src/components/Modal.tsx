@@ -25,7 +25,7 @@ const Modal = ({
   onclick,
 }: ModalProps) => {
   return (
-    <div className="flex flex-col rounded-md items-center justify-center gap-3  bg-white border-2 border-black w-70 h-72 shadow-[2px_2px_0px_0px_#000000]">
+    <div className="flex flex-col rounded-md items-center justify-center gap-3 bg-white border-2 border-black w-[90%] max-w-xs py-6 px-4 shadow-[2px_2px_0px_0px_#000000] sm:w-70 sm:h-72 sm:py-0 sm:px-0">
       <h1 className="font-jetbrains font-semibold text-2xl">{headText}</h1>
       <div>
         <h2 className="font-jetbrains font-semibold">{firstText}</h2>

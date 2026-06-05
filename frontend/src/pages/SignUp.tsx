@@ -68,7 +68,7 @@ const SignUp = () => {
             secondRef={passwordRef}
             onclick={() => signup()}
           />
-          <div className="absolute bottom-16 right-18">
+          <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 md:absolute md:bottom-16 md:right-18 md:left-auto md:translate-x-0">
             <Alert
               open={openAlert}
               message={alertMessage as string}

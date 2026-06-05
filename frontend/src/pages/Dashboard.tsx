@@ -186,8 +186,8 @@ const Dashboard = () => {
   return (
     <>
       <Background>
-        <div className="relative w-full h-screen">
-          <div className="w-[50%] mx-auto">
+        <div className="relative w-full min-h-screen">
+          <div className="w-full max-w-2xl px-4 md:px-0 mx-auto">
             <NavBar
               logoutFunction={logout}
               addFunction={() => setGoalModal((x) => !x)}
@@ -229,7 +229,7 @@ const Dashboard = () => {
               </div>
             )}
           </div>
-          <div className="absolute bottom-16 right-18">
+          <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 md:absolute md:bottom-16 md:right-18 md:left-auto md:translate-x-0">
             <Alert
               open={openAlert}
               message={alertMessage as string}
