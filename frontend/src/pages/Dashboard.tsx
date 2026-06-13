@@ -30,14 +30,26 @@ const Dashboard = () => {
   const [alertMessage, setAlertMessage] = useState<string>("");
 
   const getGoals = async () => {
-    const token = localStorage.getItem("token");
-    const response = await axios.get(`${BACKEND_URL}/api/v1/goal/`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    if (response) {
-      setGoals(response.data.data);
+    try {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        navigate("/");
+        return;
+      }
+      const response = await axios.get(`${BACKEND_URL}/api/v1/goal/`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      if (response) {
+        setGoals(response.data.data);
+      }
+    } catch (error: any) {
+      console.error("Error fetching goals:", error);
+      if (error.response?.status === 401 || error.response?.status === 403) {
+        localStorage.removeItem("token");
+        navigate("/signin");
+      }
     }
   };
 
